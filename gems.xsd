@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema"
+        targetNamespace="https://gems.com"
+        xmlns:tns="https://gems.com"  elementFormDefault="qualified">
+
+    <element name="gems">
+        <complexType>
+            <choice minOccurs="0" maxOccurs="unbounded">
+                <element name="precious-gem" type="tns:precious-gem"/>
+                <element name="semi-precious-gem" type="tns:semi-precious-gem"/>
+            </choice>
+        </complexType>
+    </element>
+
+    <complexType name="precious-gem">
+        <complexContent>
+            <extension base="tns:abstract-gem">
+                <sequence>
+                    <element name="carat-weight">
+                        <simpleType>
+                            <restriction base="decimal">
+                                <pattern value="[0-9]{1,10}(\.[0-9]{1,8})?"/>
+                            </restriction>
+                        </simpleType>
+                    </element>
+                </sequence>
+            </extension>
+        </complexContent>
+    </complexType>
+
+    <complexType name="semi-precious-gem">
+        <complexContent>
+            <extension base="tns:abstract-gem">
+                <sequence>
+                    <element name="weight">
+                        <simpleType>
+                            <restriction base="decimal">
+                                <pattern value="[0-9]{1,10}(\.[0-9]{1,8})?"/>
+                            </restriction>
+                        </simpleType>
+                    </element>
+                </sequence>
+            </extension>
+        </complexContent>
+    </complexType>
+
+    <complexType name="abstract-gem">
+        <sequence>
+            <element name="name" type="string"/>
+            <element name="origin" type="string"/>
+            <element name="hardness">
+                <simpleType>
+                    <restriction base="decimal">
+                        <minInclusive value="1"/>
+                        <maxInclusive value="10"/>
+                    </restriction>
+                </simpleType>
+            </element>
+            <element name="color" type="string"/>
+            <element name="gem-type">
+                <simpleType>
+                    <restriction base="string">
+                        <enumeration value="Natural"/>
+                        <enumeration value="Synthetic"/>
+                        <enumeration value="Imitation"/>
+                    </restriction>
+                </simpleType>
+            </element>
+        </sequence>
+        <attribute name="id" use="required">
+            <simpleType>
+                <restriction base="ID">
+                    <pattern value="ID-[1-9][0-9]{0,5}"/>
+                </restriction>
+            </simpleType>
+        </attribute>
+    </complexType>
+</schema>
