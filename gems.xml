@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gems xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          xsi:schemaLocation="https://gems.com/ gems.xsd"
+          xmlns="https://gems.com">
+    <!--First gem-->
+    <precious-gem id="ID-1">
+        <name>Diamond</name>
+        <origin>Australia</origin>
+        <hardness>10.0</hardness>
+        <color>Colorless</color>
+        <gem-type>Natural</gem-type>
+        <carat-weight>1.5</carat-weight>
+    </precious-gem>
+    <!--Second gem-->
+    <precious-gem id="ID-2">
+        <name>Ruby</name>
+        <origin>Myanmar</origin>
+        <hardness>9.0</hardness>
+        <color>Red</color>
+        <gem-type>Synthetic</gem-type>
+        <carat-weight>10.32</carat-weight>
+    </precious-gem>
+    <!--Third gem-->
+    <semi-precious-gem id="ID-3">
+        <name>Agate</name>
+        <origin>Georgia</origin>
+        <hardness>6.6</hardness>
+        <color>Black</color>	
+        <gem-type>Natural</gem-type>
+        <weight>21</weight>
+    </semi-precious-gem>
+    <!--Fourth gem-->
+    <semi-precious-gem id="ID-4">
+        <name>Amethyst</name>
+        <origin>Sri lanka</origin>
+        <hardness>7</hardness>
+        <color>Violet</color>
+        <gem-type>Imitation</gem-type>
+        <weight>10.0</weight>
+    </semi-precious-gem>
+</gems>
